@@ -1,0 +1,13 @@
+
+<div class="wrapper">
+<button class="btn btn-primary btn-sm active" (click)="doLoadObject($event)" title="Load S3 Object">Load S3 Object</button>
+<json-editor #JsonEditorComponent [options]="editorOptions" [data]="data"></json-editor>
+<button class="btn btn-primary btn-sm active" (click)="doLoadForm()" title="Load Changes">Preview Changes</button>
+</div>
+
+<div>
+<span class="col-xs-6">
+	<input type="text" class="form-control" id="objectName"	(blur)="doUpdateObject($event)"	placeholder="enter a name for this action" value="{{globals.objectName}}">
+	<button class="btn btn-primary btn-sm active" (click)="doSaveObject($event)" title="Connect to Cruise Engine." enabled=false>Save</button>
+</span>
+</div>

@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- Fixed navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Cruise Builder</a>
+</nav>
+
+    
+
+    <tabset [pills]="true">
+        <tab>
+            <span *tabHeading>
+                <b style="color: deepskyblue">S3 Selection</b> 
+            </span>
+			<div style="text-align:left">
+			   <app-cruises3></app-cruises3>
+			</div>
+        </tab>
+        <tab>
+            <span *tabHeading>
+                <b style="color: deepskyblue">Service Editor</b> 
+            </span>
+			<div style="text-align:left">
+			   <app-plugins (onJsonLoaded)="onJsonLoaded($event)"></app-plugins>
+			</div>
+        </tab>
+
+        <tab>
+            <span *tabHeading>
+                <b style="color: deepskyblue">JavaScript Editor</b> 
+            </span>
+			<div>
+			  <app-cruisecode #cruiseCode ></app-cruisecode>
+			</div>
+        </tab>
+        <tab title="Map" [disabled]="false">
+            <span *tabHeading>
+                <b style="color: deepskyblue">Form Editor</b> 
+            </span>
+            <app-cruiseform #CruiseForm></app-cruiseform>
+        </tab>
+    </tabset>
+
+
+
+

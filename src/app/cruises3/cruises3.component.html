@@ -1,0 +1,20 @@
+
+
+    <div class="card card-cascade narrower">
+        <!--Card image-->
+        <h2 class="h2-responsive">{{selectedBucket.name}}</h2>
+        <h5 class="view blue lighten-1">{{selectedFile.key}}</h5>
+        <!--Card content-->
+        <div class="card-body text-left  grey lighten-1 bold">
+		  	S3Bucket:<select [(ngModel)]="selectedBucket" (ngModelChange)="onBucketChange($event)">
+			    <option *ngFor="let sp of supportedBuckets"	title=" By:{{sp.name}} Version:{{sp.creationDate}}" [ngValue]="sp">{{sp.name}}</option>
+			</select><br><br>
+			S3Objects:<select [(ngModel)]="selectedFile" (ngModelChange)="onFileChange($event)">
+			    <option *ngFor="let sp of supportedFiles"	title=" By:{{sp.key}} Version:{{sp.lastModified}}" [ngValue]="sp">{{sp.key}}</option>
+			</select>
+        </div>
+        <div class="card-body text-left  grey lighten-1 bold">
+		    <button class="btn btn-primary btn-sm active" (click)="doDeleteObject()" title="Deletes the Object from S3">Delete Object</button>
+		    <button (click)="onRefreshList()">Refresh List</button>
+		</div>
+    </div>

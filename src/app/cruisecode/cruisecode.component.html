@@ -1,0 +1,17 @@
+   <div class="card card-cascade narrower">
+        <!--Card image-->
+        <div class="view  grey lighten-3">
+            <h3 class="h2-responsive">Script</h3>
+        </div>
+
+       
+        <!--Card content-->
+        <div class="card-body text-left  grey lighten-1 bold" height="100%">
+			<button class="btn btn-primary btn-sm active" (click)="formatCode($event)" title="Format Code">Format Code</button>
+			<button class="btn btn-primary btn-sm active" (click)="runCode($event)" title="Execute code on server">Execute Standalone</button>
+			<button class="btn btn-primary btn-sm active" (click)="runInjectedCode($event)" title="Add service to current services in ">Append to Service and Execute</button>
+			<button class="btn btn-primary btn-sm active" (click)="appendInjectedCode($event)" title="Add the script service to the current service">Append to Service</button>
+			<codemirror #editor [(ngModel)]="value" (blur)="onBlur()" (focus)="onFocus($event)" (change)="onChange($event)" [config]="config"></codemirror>
+        </div>
+        <!--/.Card content-->
+    </div>
