@@ -2,12 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { Ng4JsonEditorModule } from 'angular4-jsoneditor';
 import { FormioModule } from 'angular-formio';
+import { Ng4JsonEditorModule } from 'angular4-jsoneditor';
 import { AppComponent } from './app.component';
 import { CruisejsonComponent } from './cruisejson/cruisejson.component';
 import { CruisecodeComponent } from './cruisecode/cruisecode.component';
 import { CodemirrorModule } from 'ng2-codemirror';
+
 import { PluginsService } from './dataServices/plugins.service';
 import { PluginsComponent } from './plugins/plugins.component';
 import { GlobalvariablesComponent } from './globalvariables/globalvariables.component';
@@ -30,10 +31,11 @@ import {MatCardModule} from '@angular/material/card';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormioModule,
     Ng4JsonEditorModule, 
     CodemirrorModule,
     TabsModule,
-    FormioModule,MatCardModule
+    MatCardModule
   ],
   providers: [PluginsService, Cruises3Component, GlobalvariablesComponent],
   bootstrap: [AppComponent]
